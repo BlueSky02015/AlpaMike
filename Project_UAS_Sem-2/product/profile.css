@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans Regular';
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    font-size: 2em;
+    color: azure;
+    user-select: none;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: azure;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+body{
+    background-color: black;
+}
+.card{
+    width: 35rem;
+    height: 22rem;
+    background-color:black;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    box-shadow: 0 1rem 5rem whitesmoke;
+    transition: height 0.5s;
+}
+
+.active.card{
+    height: 50rem;
+}
+.card-top{
+    height: 25rem;
+    position: relative;
+}
+.card-top-img{
+    width: 12rem;
+    height: 12rem;
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-top-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 1rem 4rem red;
+}
+.card-btn{
+    width: 5rem;
+    height: 4.5rem;
+    background:linear-gradient(to right,black,aqua);
+    position: absolute;
+    top: 19.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border:none;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+.active .card-btn{
+    width: 17rem;;
+}
+
+.plus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3rem;
+    color: azure;
+    transition: all 0.5 s;
+}
+.active .plus{
+    left: 1.5rem;
+    transform: translateY(-50%)rotateZ(45deg);
+}
+.btn-text{
+    font-size: 1.3rem;
+    color: azure;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+}
+.active .btn-text{
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s 0.25s;
+}
+.card-bot{
+    color: aliceblue;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+.card-bot h1{
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+}
+.active .card-bot h1{
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s 0.25s;
+}
+.card-bot textarea{
+    opacity: 0;
+    visibility: hidden;
+    background-color: transparent;
+    color: aqua;
+    margin-bottom: 100px;
+    border: none;
+    text-align: center;
+}
+.active .card-bot textarea{
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s 0.25s;
+}
+.card-bot button{
+    transform: translateY(-115px)translateX(175px);
+    background-color: transparent;
+    color: aqua;
+    visibility: hidden;
+
+}
+.active .card-bot button{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+.icon ul{
+    visibility: hidden;
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 175px;
+    padding: 7px 50px;
+}
+.icon ul li{
+    justify-content: space-between;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.active .icon ul{
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s 0.30s;
+}
+
+/* ================Setting===========================*/
+
+.active-loc.card{
+    transform: translateX(-650px);
+    transition: 0.5s;
+    visibility: visible;
+}
+.my-loc{
+    visibility:hidden;
+    width: 450px;
+    box-shadow: 0 1rem 5rem whitesmoke;
+    transform: translateX(700px)translateY(-800px);
+}
+.active-loc.card .my-loc{
+    visibility: visible;
+    transition: 0.5s;
+}
+.my-loc p{
+    color: azure;
+    text-align: center;
+}
+.my-loc button{
+    background-color: transparent ;
+    border-color: aqua;
+    color:aqua;
+    justify-content: space-between;
+    margin-left: 125px;
+}
+.my-loc iframe{
+    visibility: hidden;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+.active-map iframe{
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpaMiKE</title>
+    <link rel="stylesheet" href="style-y.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <div>
+                <ul>
+                    <li><h1 class="logo">AlpaMike</h1></li>
+                    <li     class="shopping"><h2>CART</h2><span class="quantity">0</span></li>
+                    <li ><a href="../index/index.html">Home</a></li>
+                    <li ><a href="../inven/cart.html">Inventory</a></li>
+                    <li ><a href="../product/Profile.html">Profile</a></li>
+                    <li    class="order"><h3>Order</h3></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="list"></div>
+    </div>
+
+    <div class="card">
+        <h1>
+            <span class="pcart">Cart</span>
+            <span class="pinvoice">Invoice</span>
+        </h1>
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div>
+            <h1>Invoice</h1>
+            <p>Custumer</p>
+            <p id="datetime"></p><br>
+            <div class="output">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=total">
+            </div>
+            <a href="../inven/cart.html">Done</a>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+   
+
+    <!------------Buat hasil Output Total------------->
+    <script>
+        let imgBox =document.getElementById('imgBox');   
+        let qrImage =document.getElementById('qrImage');   
+        let qrText =document.getElementById('qrText');   
+
+        function generateQR() {
+        qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
+        }
+    </script>
+
+    <!---------------Waktu untuk invoice---------------->
+ <script>
+        function updateTime() {
+          let now = new Date();
+          let datetime = document.getElementById('datetime');
+          datetime.innerHTML = now.toLocaleString();
+        }
+        setInterval(updateTime, 1000);
+      </script>
+
+</body>
+</html>

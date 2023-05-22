@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpaMikeHome</title>
+    <link rel="stylesheet" href="cart-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+     <header>
+        <h2 class="logo" >AlpaMike</h2>
+        <nav class="navigation">
+            <a href="../home/home-y.html">Home</a>
+            <a href="#">Inventory</a>
+        </nav>
+    </header>
+
+<main>
+    <div>
+        <h2 class="title">Your List</h2>
+        <button id="gachaBtn" class="btn">Order</button><br><br>
+        <div class="small-com">
+         <table border="1">
+            <tr class="bg-info"> 
+                <th width=" 100px" data-column="id">ID </th>
+                <th width=" 700px">Name </th>
+                <th width=" 300px" data-column="price">Price </th>
+            </tr>
+            <tbody id="myTable"></tbody>
+         </table>
+        </div>
+    </div>
+</main>
+</body>
+<script src="./inventory.js"></script>
+<script src="./gacha-system.js"></script>
+<script src="./table.js"></script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpaMikeHome</title>
+    <link rel="stylesheet" href="profile.css">
+    <script>
+        function saveData() {
+          // Get data from form
+          var description = document.getElementById('description').value;
+          // Save data to localStorage
+          localStorage.setItem('description', description);
+          // Display success message
+          alert('Data saved successfully!');
+        }
+        window.onload = function() {
+            // Get data from localStorage
+            var description = localStorage.getItem('description');
+            // Populate form with data
+            if (description !== null) {
+              document.getElementById('description').value = description;
+            }
+          }
+    </script>
+
+</head>
+<body>
+     <header>
+        <h2 class="logo" >AlpaMike</h2>
+        <nav class="navigation">
+            <a href="../home/home-y.html">Home</a>
+            <a href="../inven/cart.html">Inventory</a>
+        </nav>
+    </header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-top">
+            <div class="card-top-img">
+                <img src="img/pic.jpg" alt="">
+            </div>
+        </div>
+        <button type="button" class="card-btn">
+            <span class="plus">+</span>
+            <span class="btn-text">Welcome</span>
+        </button>
+        <div class="card-bot">
+            <h1>Admin</h1>
+            <textarea id="description" name="description" rows="4" cols="50" placeholder="Enter your description here..."></textarea><br>
+            <button type="button" onclick="saveData()">Save Data</button>
+            <div class="icon">
+                <ul>
+                    <li class="location">Location</li>
+                </ul>
+            </div>
+        </div>
+        <div class="my-loc">
+            <p>Your Location</p>
+            <button class="showlock">Show</button>
+            <button class="hidelock">HIDE</button>
+            <iframe id="myMap" width="450" height="450" frameborder="0" scrolling="no"src=""></iframe>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="profile.js"></script>
+<script>
+   // Check if geolocation is supported
+   if (navigator.geolocation) {
+    // Get current position
+    navigator.geolocation.getCurrentPosition(function(position) {
+      // Set iframe source with current position
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      var url = "https://maps.google.com/maps?q=" + latitude + "," + longitude + "&output=embed";
+      document.getElementById("myMap").src = url;
+    });
+  } else {
+    // Geolocation not supported
+    alert("Geolocation is not supported by this browser.");
+  }
+    </script>
+</body>
+</html>
+

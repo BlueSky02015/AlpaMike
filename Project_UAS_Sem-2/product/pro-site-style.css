@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans Regular';
+}
+body{
+    min-height: 100vh;
+    background-color:black;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+main{
+    margin: 150px;
+}
+.logo{
+    font-size: 2em;
+    color: antiquewhite;
+    user-select: none;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: azure;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around ;
+}
+.small-con{
+    max-width: 720px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 200px;
+}
+.col-2 h1{
+    text-align: left;
+}
+.btn{
+    text-decoration: none;;
+    background: transparent;
+    border: 2px solid ;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: .9em;
+    color: aqua;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: .5s;
+}
+.btn:hover{
+    background: aqua;
+    color: black;
+}
+.single-pro{
+    margin-top: 80px;
+}
+.single-pro .col-2 img{
+    padding: 0;
+}
+.single-pro .col-2{
+    padding: 20px;
+}
+.single-pro input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid ;
+    border-color: aqua;
+}
+h1{
+    
+    text-align:center;
+}
+h4{
+    margin-left: 25px;
+}
+.rl{
+    margin-top: 50px;
+    margin-left: 150px;
+}
+th{
+    background: burlywood;
+}
+.tl{
+    width: 720px;
+    align-content: center;
+    border: 1px solid ;
+}
+td{
+    text-align: center;
+    background: black;
+    color: azure;
+}
